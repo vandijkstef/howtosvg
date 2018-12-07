@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  background-color: #cca300;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  width: 100%;
+  background-color: #FFCC00;
+  transition: .4s;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.6rem 0;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a:active svg {
+  transform: rotate(30deg);
+}
+
+span {
+	display: none;
+	position: absolute;
+	bottom: .6em;
+}
+
+svg {
+	width: 4em;
+	animation: fadeIn 1s;
+	position: relative;
+	top: 0;
+	transition: .2s;
+}
+
+svg * {
+  transition: .2s;
+}
+
+svg .cls-1, svg .cls-2 {
+  fill: #cca300;
+}
+
+li:hover {
+  background-color: #ffe066;
+}
+
+li:hover svg {
+  top: -1em;
+}
+
+li:hover .cls-1 {
+  fill: white;
+}
+
+li:hover .cls-2 {
+  fill: black;
+}
+
+li:hover #calendar g g > path:first-of-type {
+  animation: toggleFade 2s linear infinite;
+}
+
+li:hover #phone g:last-of-type polygon {
+  animation: toggleFadeColor 2s linear infinite;
+}
+
+li:hover span {
+  display: block;
+  animation: fadeIn .4s;
+}
+
+@keyframes fadeIn {
+  0% {
+    bottom: -.4em;
+    opacity: 0;
+  }
+  50% {
+    bottom: -.4em;
+    opacity: 0;
+  }
+}
+
+@keyframes toggleFade {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes toggleFadeColor {
+  40% {
+    fill: black;
+  }
+  50% {
+    fill: white;
+  }
+  60% {
+    fill: black;
+  }
+}
